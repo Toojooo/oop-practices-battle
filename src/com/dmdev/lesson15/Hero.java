@@ -1,15 +1,19 @@
 package com.dmdev.lesson15;
 
-public abstract class Hero  implements Mortal{
+import com.dmdev.lesson18.Weapon.Weapon;
+
+public abstract class Hero<T extends Weapon> implements Mortal{
     private final String name;
     private int health;
     private final int damage;
+    private T weapon;
 
     // Конструктор героя
     public Hero(String name, int damage, int health) {
         this.name = name;
         this.damage = damage;
         this.health = health;
+
     }
 
     // Абстрактный метод атаки врага (реализуется в подклассах)
@@ -57,5 +61,13 @@ public abstract class Hero  implements Mortal{
     // Установить новое здоровье (возможна защита от отрицательных значений)
     public void setHealth(int health) {
         this.health = Math.max(health, 0); // здоровье не может быть меньше 0
+    }
+
+    public T getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(T weapon) {
+        this.weapon = weapon;
     }
 }

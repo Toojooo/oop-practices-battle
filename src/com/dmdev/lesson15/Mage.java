@@ -1,6 +1,8 @@
 package com.dmdev.lesson15;
 
-public class Mage extends Hero{
+import com.dmdev.lesson18.Weapon.MagicWeapon;
+
+public class Mage<T extends MagicWeapon> extends Hero<T>{
 
     public Mage(String name, int damage, int health) {
         super(name,damage,health);
