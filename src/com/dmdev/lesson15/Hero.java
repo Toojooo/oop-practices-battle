@@ -1,9 +1,9 @@
 package com.dmdev.lesson15;
 
 public abstract class Hero  implements Mortal{
-    private String name;
+    private final String name;
     private int health;
-    private int damage;
+    private final int damage;
 
     // Конструктор героя
     public Hero(String name, int damage, int health) {
